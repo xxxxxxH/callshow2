@@ -9,12 +9,15 @@ import com.applovin.sdk.AppLovinMediationProvider
 import com.applovin.sdk.AppLovinSdk
 import com.applovin.sdk.AppLovinSdkSettings
 import com.tencent.mmkv.MMKV
+import ftp.callshow.colorss.app.BuildConfig
 import ftp.callshow.colorss.app.R
+import ftp.callshow.colorss.app.utils.loges
 import kotlin.system.measureTimeMillis
 
-class AmazingJAdvertisement {
+class AmazingJAdvertisement{
 
     companion object{
+        @Volatile
         private var i:AmazingJAdvertisement?=null
         get() {
             field?.run {
@@ -38,6 +41,7 @@ class AmazingJAdvertisement {
     }
 
     fun initSdk(){
+        "app $app".loges()
         measureTimeMillis {
             MMKV.initialize(app)
             maxSdk.apply {

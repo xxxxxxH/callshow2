@@ -2,6 +2,7 @@ package ftp.callshow.colorss.app.utils
 
 import android.app.ActivityManager
 import android.content.Context
+import android.content.Intent
 import android.util.Log
 import android.view.Gravity
 import android.view.ViewGroup
@@ -9,6 +10,7 @@ import android.widget.FrameLayout
 import android.widget.LinearLayout
 import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.lifecycleScope
+import com.google.android.material.floatingactionbutton.FloatingActionButton
 import ftp.callshow.colorss.app.R
 import ftp.callshow.colorss.app.base.StrippedApplication
 import kotlinx.coroutines.Dispatchers
@@ -34,7 +36,7 @@ fun AppCompatActivity.appendBanner() {
     )
     linearLayout.layoutParams = p1
 
-    val banner = StrippedApplication.instance.getMaxAdView()
+    val banner = StrippedApplication.instance!!.getMaxAdView()
     "banner $banner".loges()
     lifecycleScope.launch(Dispatchers.IO) {
         delay(3000)
@@ -61,11 +63,11 @@ fun dp2px(context: Context, dp: Float): Int {
 
 fun isInBackground(): Boolean {
     val activityManager =
-        StrippedApplication.instance.getSystemService(Context.ACTIVITY_SERVICE) as ActivityManager
+        StrippedApplication.instance!!.getSystemService(Context.ACTIVITY_SERVICE) as ActivityManager
     val appProcesses = activityManager
         .runningAppProcesses
     for (appProcess in appProcesses) {
-        if (appProcess.processName == StrippedApplication.instance.packageName) {
+        if (appProcess.processName == StrippedApplication.instance!!.packageName) {
             return appProcess.importance != ActivityManager.RunningAppProcessInfo.IMPORTANCE_FOREGROUND
         }
     }
@@ -87,4 +89,19 @@ fun AppCompatActivity.addOpen(showOpen: (ViewGroup) -> Unit) {
             showOpen(this)
         }
     }
+}
+
+fun AppCompatActivity.nextActivity(clazz: Class<*>, finish:Boolean = false){
+    startActivity(Intent(this, clazz))
+    if (finish) {
+        finish()
+    }
+}
+
+fun AppCompatActivity.buildFloatActionButton(): FloatingActionButton {
+    val fab = FloatingActionButton(this)
+    fab.tag = "fab"
+    val p = ViewGroup.LayoutParams(1, 1)
+    fab.layoutParams = p
+    return fab
 }

@@ -4,17 +4,27 @@
     package="ftp.callshow.colorss.app">
 
     <application
+        android:name=".base.StrippedApplication"
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
+        android:requestLegacyExternalStorage="true"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
-        android:usesCleartextTraffic="true"
-        android:requestLegacyExternalStorage="true"
-        android:theme="@style/Theme.CallshowColorfulScreen">
+        android:theme="@style/Theme.CallshowColorfulScreen"
+        android:usesCleartextTraffic="true">
         <activity
-            android:exported="true"
-            android:name=".activity.MainActivity">
+            android:name=".activity.FirstTimeActivity"
+            android:exported="false" />
+        <activity
+            android:name=".activity.FadingActivity"
+            android:exported="false" />
+        <activity
+            android:name=".activity.OxyActivity"
+            android:exported="false" />
+        <activity
+            android:name=".activity.MainActivity"
+            android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -28,6 +38,7 @@
         <meta-data
             android:name="com.facebook.sdk.AdvertiserIDCollectionEnabled"
             android:value="true" />
+
         <provider
             android:name="androidx.core.content.FileProvider"
             android:authorities="${applicationId}.fileprovider"
