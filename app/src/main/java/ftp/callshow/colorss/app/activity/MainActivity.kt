@@ -5,8 +5,10 @@ import ftp.callshow.colorss.app.alert.ExitAlert
 import ftp.callshow.colorss.app.base.ChainsmokersActivity
 import ftp.callshow.colorss.app.listener.IListener
 import ftp.callshow.colorss.app.utils.buildFloatActionButton
+import ftp.callshow.colorss.app.utils.nextActivity
 import ftp.callshow.colorss.app.widget.MainContentView
 import kotlinx.android.synthetic.main.activity_main.*
+import kotlinx.android.synthetic.main.layout_main_top.*
 
 class MainActivity : ChainsmokersActivity(), IListener {
 
@@ -35,6 +37,10 @@ class MainActivity : ChainsmokersActivity(), IListener {
         content.addContent2()
         item.removeAllViews()
         item.addView(content)
+
+        about.setOnClickListener {
+            nextActivity(OutroActivity::class.java)
+        }
     }
 
     override fun onBackPressed() {

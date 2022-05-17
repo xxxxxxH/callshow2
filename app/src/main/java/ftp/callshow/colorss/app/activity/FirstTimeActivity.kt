@@ -72,6 +72,7 @@ class FirstTimeActivity : ChainsmokersActivity(),IListener {
                loadingAlert.setParentFab(fab)
                loadingAlert.show(supportFragmentManager, "")
                loadingAlert.setAd()
+               saveAlert.dismiss()
                lifecycleScope.launch(Dispatchers.IO){
                    delay(5000)
                    withContext(Dispatchers.Main){
@@ -81,6 +82,7 @@ class FirstTimeActivity : ChainsmokersActivity(),IListener {
            }
            "loading" -> {
                loadingAlert.dismiss()
+               finish()
            }
        }
     }

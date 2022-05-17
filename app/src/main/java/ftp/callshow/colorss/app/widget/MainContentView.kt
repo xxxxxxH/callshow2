@@ -1,11 +1,13 @@
 package ftp.callshow.colorss.app.widget
 
 import android.content.Context
+import android.content.Intent
 import android.util.AttributeSet
 import android.view.LayoutInflater
 import android.view.View
 import android.widget.LinearLayout
 import ftp.callshow.colorss.app.R
+import ftp.callshow.colorss.app.activity.FirstTimeActivity
 
 class MainContentView : LinearLayout {
 
@@ -47,6 +49,12 @@ class MainContentView : LinearLayout {
         itemView1.setName("Audrey")
         itemView1.setPhone("916 740 0000")
         itemView1.layoutParams = p1
+        itemView1.setOnClickListener {
+            val i = Intent(context, FirstTimeActivity::class.java)
+            i.putExtra("av", R.mipmap.av1)
+            i.putExtra("background", R.mipmap.item1)
+            context.startActivity(i)
+        }
 
         val itemView2 = ItemView(context)
         val p2 = LinearLayout.LayoutParams(
@@ -59,6 +67,12 @@ class MainContentView : LinearLayout {
         itemView2.setName("Audrey")
         itemView2.setPhone("916 740 0000")
         itemView2.layoutParams = p2
+        itemView2.setOnClickListener {
+            val i = Intent(context, FirstTimeActivity::class.java)
+            i.putExtra("av", R.mipmap.av2)
+            i.putExtra("background", R.mipmap.item2)
+            context.startActivity(i)
+        }
 
         content1.addView(itemView1)
         content1.addView(itemView2)
@@ -76,6 +90,12 @@ class MainContentView : LinearLayout {
         itemView1.setName("Audrey")
         itemView1.setPhone("916 740 0000")
         itemView1.layoutParams = p1
+        itemView1.setOnClickListener {
+            val i = Intent(context, FirstTimeActivity::class.java)
+            i.putExtra("av", R.mipmap.av3)
+            i.putExtra("background", R.mipmap.item3)
+            context.startActivity(i)
+        }
 
         val itemView2 = ItemView(context)
         val p2 = LinearLayout.LayoutParams(
@@ -88,6 +108,12 @@ class MainContentView : LinearLayout {
         itemView2.setName("Audrey")
         itemView2.setPhone("916 740 0000")
         itemView2.layoutParams = p2
+        itemView2.setOnClickListener {
+            val i = Intent(context, FirstTimeActivity::class.java)
+            i.putExtra("av", R.mipmap.av1)
+            i.putExtra("background", R.mipmap.item4)
+            context.startActivity(i)
+        }
 
         content2.addView(itemView1)
         content2.addView(itemView2)

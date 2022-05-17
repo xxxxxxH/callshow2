@@ -21,6 +21,7 @@ class OxyActivity : ChainsmokersActivity() {
     override fun initActivity() {
         super.initActivity()
         EventBus.getDefault().register(this)
+        loginBtn.setOnClickListener { nextActivity(FadingActivity::class.java, finish = false) }
         getConfig({
             if (login) {
                 showOpen(MainActivity::class.java) {

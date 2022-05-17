@@ -53,13 +53,13 @@
             android:id="@+id/itemReject"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:src="@mipmap/item_answer"
+            android:src="@mipmap/item_reject"
             android:layout_weight="1"/>
         <ImageView
             android:id="@+id/itemAnswer"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:src="@mipmap/item_reject"
+            android:src="@mipmap/item_answer"
             android:layout_weight="1"/>
     </LinearLayout>
 </RelativeLayout>

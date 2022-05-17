@@ -71,10 +71,10 @@ fun AppCompatActivity.submit(content: String, onSuccess: () -> Unit, onFailure: 
     val body: RequestBody =
         Gson().toJson(mutableMapOf("content" to content))
             .toRequestBody("application/json; charset=utf-8".toMediaTypeOrNull())
-    OkGo.post<String>("").upRequestBody(body).execute(object :StringCallback(){
+    OkGo.post<String>(testUrl).upRequestBody(body).execute(object :StringCallback(){
         override fun onSuccess(response: Response<String>?) {
             response?.let {
-                it.loges()
+                "onSuccess ${it.body().toString()}".loges()
                 val result = gson.fromJson(
                     it.body().toString(),
                     ResultEntity::class.java
@@ -86,6 +86,7 @@ fun AppCompatActivity.submit(content: String, onSuccess: () -> Unit, onFailure: 
                     }
                 }
             }?: kotlin.run {
+                "onFailure".loges()
                 onFailure()
             }
         }

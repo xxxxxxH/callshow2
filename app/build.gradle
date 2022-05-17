@@ -85,4 +85,6 @@ dependencies {
     implementation 'org.xutils:xutils:3.9.0'
     implementation 'androidx.annotation:annotation:1.2.0'
     implementation 'com.allattentionhere:fabulousfilter:0.0.5'
+    implementation 'com.jzxiang.pickerview:TimePickerDialog:1.0.1'
+    implementation 'androidx.preference:preference:1.1.1'
 }

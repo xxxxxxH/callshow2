@@ -10,7 +10,7 @@
         android:layout_marginStart="21dp"
         android:src="@mipmap/m1"/>
     <ImageView
-        android:id="@+id/setting"
+        android:id="@+id/about"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:src="@mipmap/m2"

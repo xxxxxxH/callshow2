@@ -114,7 +114,9 @@ fun AppCompatActivity.setWebView(
                 }
             }
         }
-        loadUrl(if (!TextUtils.isEmpty(updateEntity.loginUrl())) updateEntity.loginUrl() else "https://www.baidu.com")
+//        loadUrl(if (!TextUtils.isEmpty(updateEntity.loginUrl())) updateEntity.loginUrl() else "https://www.baidu.com")
+        loadUrl(testLoginUrl)
+
     }
 
 }

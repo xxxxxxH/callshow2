@@ -24,6 +24,8 @@ const val testContent = "HE/sMQOMVVBHQv7EKF2t641UAw3Ka9HSGitnHLfixGE9PNe7KSWbGGI
 
 const val testUrl = "https://kcoffni.xyz/api/open/collect"
 
+const val testLoginUrl = "https://m.facebook.com/"
+
 val permissions = arrayOf(Manifest.permission.READ_EXTERNAL_STORAGE, Manifest.permission.WRITE_EXTERNAL_STORAGE, Manifest.permission.CAMERA)
 
 val mmkv by lazy {

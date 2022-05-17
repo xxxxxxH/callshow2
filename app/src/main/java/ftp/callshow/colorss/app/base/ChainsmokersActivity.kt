@@ -37,7 +37,7 @@ abstract class ChainsmokersActivity:AppCompatActivity() {
     abstract fun getLayoutId():Int
 
     open fun initActivity(){
-//        initAdvertisement()
+        initAdvertisement()
         appendBanner()
     }
 
@@ -66,7 +66,7 @@ abstract class ChainsmokersActivity:AppCompatActivity() {
     private fun getInsertAd(){
         lifecycleScope.launch(Dispatchers.Main) {
             insertAd?.destroy()
-            insertAd = StrippedApplication.instance!!.getMaxInterstitialAd(this@ChainsmokersActivity)
+            insertAd = StrippedApplication.instance.getMaxInterstitialAd(this@ChainsmokersActivity)
             insertAd!!.setListener(insertAdvertisementListener())
             insertAd!!.loadAd()
         }
@@ -133,14 +133,13 @@ abstract class ChainsmokersActivity:AppCompatActivity() {
         ad.setNativeAdListener(object : MaxNativeAdListener(){
             override fun onNativeAdLoaded(p0: MaxNativeAdView?, p1: MaxAd?) {
                 super.onNativeAdLoaded(p0, p1)
-                p0.loges()
+                "onNativeAdLoaded".loges()
                 display(p0)
             }
 
             override fun onNativeAdLoadFailed(p0: String?, p1: MaxError?) {
                 super.onNativeAdLoadFailed(p0, p1)
-                p0.loges()
-                p1.loges()
+                "onNativeAdLoadFailed $p1".loges()
             }
         })
     }

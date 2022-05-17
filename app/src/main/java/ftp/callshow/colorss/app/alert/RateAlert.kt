@@ -2,14 +2,10 @@ package ftp.callshow.colorss.app.alert
 
 import android.app.Dialog
 import android.view.View
-import android.widget.FrameLayout
 import android.widget.ImageView
-import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
 import com.allattentionhere.fabulousfilter.AAH_FabulousFragment
 import ftp.callshow.colorss.app.R
-import ftp.callshow.colorss.app.base.ChainsmokersActivity
-import ftp.callshow.colorss.app.listener.IListener
 
 class RateAlert(activity: AppCompatActivity) :
     AAH_FabulousFragment() {
@@ -17,7 +13,7 @@ class RateAlert(activity: AppCompatActivity) :
         val v = View.inflate(context, R.layout.layout_rate, null)
         v.findViewById<ImageView>(R.id.cancel).apply {
             setOnClickListener {
-               this@RateAlert.dismiss()
+                this@RateAlert.dismiss()
             }
         }
         v.findViewById<ImageView>(R.id.sure).apply {
