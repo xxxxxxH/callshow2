@@ -4,9 +4,10 @@
     android:layout_height="54dp">
 
     <ImageView
+        android:id="@+id/f"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:src="@mipmap/s1"
         android:layout_marginStart="21dp"
-        android:layout_alignParentBottom="true"/>
+        android:layout_alignParentBottom="true"
+        android:src="@mipmap/s1" />
 </RelativeLayout>

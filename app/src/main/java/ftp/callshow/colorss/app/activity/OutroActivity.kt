@@ -8,6 +8,7 @@ import ftp.callshow.colorss.app.base.ChainsmokersActivity
 import ftp.callshow.colorss.app.utils.buildFloatActionButton
 import ftp.callshow.colorss.app.widget.AboutContentView
 import ftp.callshow.colorss.app.widget.SettingTopView
+import kotlinx.android.synthetic.main.about_top.*
 import kotlinx.android.synthetic.main.layout_about.*
 
 class OutroActivity :ChainsmokersActivity(){
@@ -30,6 +31,9 @@ class OutroActivity :ChainsmokersActivity(){
 
     override fun initActivity() {
         super.initActivity()
+
+        f.setOnClickListener { finish() }
+
         val view1 = SettingTopView(this)
         about1.addView(view1)
 
@@ -54,7 +58,7 @@ class OutroActivity :ChainsmokersActivity(){
         val item3 = AboutContentView(this)
         item3.setIcon(R.mipmap.s7)
         item3.setTvText("Version number 1.0.1")
-        item3.setArrowVisible(View.GONE)
+        item3.setArrowVisible(View.INVISIBLE)
 
         about2.addView(item1)
         about2.addView(item2)
