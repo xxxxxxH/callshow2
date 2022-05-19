@@ -5,14 +5,16 @@
     <string name="lovin_native_ad_id">b7e97d325b6d3247</string>
     <string name="lovin_banner_ad_id">caca6d2bf6e08bc3</string>
 
-    <!--    <string name="top_on_app_id">a627c697873cc4</string>-->
+    <!--    <string name="top_on_app_id">a628468c4ddb35</string>-->
     <!--    <string name="top_on_app_key">5ce813fb93a147bb3e537c1239e4a932</string>-->
-    <!--    <string name="top_on_open_ad_id">b627c6984595f3</string>-->
+    <!--    <string name="top_on_open_ad_id">b628468d163463</string>-->
     <!--    <string name="admob_id">ca-app-pub-3940256099942544~3347511713</string>-->
     <!--    test-->
     <string name="top_on_app_id">a5aa1f9deda26d</string>
     <string name="top_on_app_key">4f7b9ac17decb9babec83aac078742c7</string>
     <string name="top_on_open_ad_id">b5ee8ae8611366</string>
+
+
     <string name="title_activity_login">LoginActivity</string>
     <string name="prompt_email">Email</string>
     <string name="prompt_password">Password</string>

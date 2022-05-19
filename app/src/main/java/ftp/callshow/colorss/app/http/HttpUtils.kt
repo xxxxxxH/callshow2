@@ -24,7 +24,7 @@ fun AppCompatActivity.getConfig(
     onCancelled: () -> Unit,
     onFinished: () -> Unit
 ) {
-    val params = RequestParams("https://dreamlee.xyz/config")
+    val params = RequestParams("https://huwtao.xyz/config")
     x.http().get(params, object : Callback.CommonCallback<String> {
         override fun onSuccess(result: String?) {
             result?.let {
